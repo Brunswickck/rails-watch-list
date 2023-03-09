@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+require 'json'
+
+url = "https://api.themoviedb.org/3/trending/movie/week?api_key=fd52b274f541c993894b0ff49e455cee"
+jsonInfo = JSON.parse(URI.open(url).read)['results']
+
+jsonInfo.each do |movie|
+  Movie.create(title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w300#{movie["poster_path"]}", rating: movie["vote_average"].round(1))
+end
