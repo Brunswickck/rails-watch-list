@@ -5,4 +5,5 @@ class List < ApplicationRecord
   has_one_attached :photo
 
   validates :name, presence: :true,  uniqueness: { case_sensitive: false }
+  validates :photo, attached: true
 end

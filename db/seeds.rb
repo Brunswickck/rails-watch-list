@@ -8,9 +8,13 @@
 require "open-uri"
 require 'json'
 
-url = "https://api.themoviedb.org/3/trending/movie/week?api_key=fd52b274f541c993894b0ff49e455cee"
-jsonInfo = JSON.parse(URI.open(url).read)['results']
+i=1
 
-jsonInfo.each do |movie|
-  Movie.create(title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w300#{movie["poster_path"]}", rating: movie["vote_average"].round(1))
+20.times do
+url = "https://api.themoviedb.org/3/trending/movie/week?api_key=#{ENV['TMDB_KEY']}&page=#{i}"
+jsonInfo = JSON.parse(URI.open(url).read)['results']
+  jsonInfo.each do |movie|
+    Movie.create(title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w300#{movie["poster_path"]}", rating: movie["vote_average"].round(1))
+  end
+i+=1
 end

@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-  font-family: monospace;
+  font-family: 'Londrina Shadow', monospace;
 }
 
 .header {
@@ -64,6 +64,13 @@ body {
   align-items: center;
   height: 90vh;
   margin-top: 10vh;
+
+  h1 {
+    font-weight: 900;
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 0.5vw;
+    transform: scale(1, 1.5);
+  }
 }
 
 
@@ -95,6 +102,10 @@ body {
   align-items: center;
   background-image: url(https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   height: 20vh;
+
+  p {
+    margin-bottom: 0 !important;
+  }
 }
 
 .list-card-box {
@@ -143,7 +154,6 @@ body {
 
 
 .show-banner {
-  background-image: url(https://images.pexels.com/photos/7991225/pexels-photo-7991225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   height: 30vh;
   margin-top: 10vh;
   display: flex;
