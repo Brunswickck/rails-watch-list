@@ -4,7 +4,7 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-// @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
 // Your CSS partials
@@ -221,7 +221,7 @@ body {
 
 .reviews {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 10vh;
@@ -234,6 +234,7 @@ body {
 .reviews-list {
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
 }
 
 .review-card-rating {

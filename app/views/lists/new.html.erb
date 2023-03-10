@@ -1,8 +1,14 @@
 <div class='list-form-box'>
   <div class='list-form'>
     <%= simple_form_for(@list) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit %>
+      <div class='row'>
+        <div class='col'>
+          <%= f.input :name %>
+        </div>
+        <div class='col'>
+          <%= f.submit %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
