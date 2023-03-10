@@ -59,13 +59,11 @@ body {
   background-image: url(https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg);
   background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 90vh;
   margin-top: 10vh;
-
-  h1 {
-    padding: 20vh 0;
-  }
 }
 
 

@@ -1,5 +1,7 @@
   <div class='index-header'>
-    <h1>Your favourite movies</h1>
+    <h1>WhatToWatch</h1>
+    <h3>Spend less time deciding what to watch, and spend more time watching!</h3>
+    <p><%= link_to "Go to your lists", lists_path(anchor: "lists-anchor")%></p>
   </div>
   <div class='index-main'>
     <h2>Your lists</h2>
@@ -8,9 +10,9 @@
   <div class='list-card-box'>
     <div class='list-cards' id='lists-anchor'>
       <% @lists.each do |list| %>
-      <div class='list-card'>
+      <div class='list-card'   style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, widths: 300, crop: :fill %>')">
         <p><%= link_to list.name, list_path(list) %></p>
       </div>
-      <% end %>#
+      <% end %>
     </div>
   </div>

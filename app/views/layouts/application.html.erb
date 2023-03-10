@@ -13,7 +13,7 @@
   <body>
     <div class="header">
       <%= link_to lists_path do %>
-        <i class="fa-solid fa-ticket"></i>
+        <%= cl_image_tag("WhatToWatchLogo", width: 80, crop: :scale) %>
       <% end %>
       <div class="header-buttons">
         <p class="header-link"><%= link_to "My lists", lists_path(anchor: "lists-anchor")%></p>
