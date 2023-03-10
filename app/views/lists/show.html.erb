@@ -1,13 +1,39 @@
-<h1><%= @list.name %>
-<%@list.movies.each do |movie|%>
-<p><%= movie.title %></p>
-<p><%= movie.overview %></p>
-<p><%= movie.rating %></p>
-<img src="<%= movie.poster_url%>">
-<% @bookmark = Bookmark.find_by(movie: movie, list: @list) %>
-<p><%= link_to "Delete", bookmark_path(@bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-<% end %>
-<br>
-<%= render "bookmarks/new", list: @list, bookmark: @bookmark %>
-<br>
-<p><%= link_to "Home", lists_path %></p>
+<div class='show-banner'>
+  <h1><%= @list.name %>
+</div>
+<div class='movies-card-box'>
+  <% @list.movies.each do | movie | %>
+    <div class='movie-card'>
+        <div class='movie-card-image'>
+          <img src="<%= movie.poster_url%>">
+        </div>
+        <div class='movie-card-text'>
+          <p class='movie-card-title'><%= movie.title %></p>
+          <p class='movie-card-overview'><%= movie.overview %></p>
+          <p class='movie-card-rating'><%= movie.rating %></p>
+          <% @bookmark = Bookmark.find_by(movie: movie, list: @list) %>
+          <%= link_to bookmark_path(@bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
+<div class='new-bookmark'>
+  <p>Add a new movie</p>
+  <%= render "bookmarks/new", list: @list, bookmark: Bookmark.new %>
+</div>
+<div class='reviews'>
+  <div class='new-review'>
+    <h1>Leave a review of this list!</h2>
+    <%= render "reviews/new", list: @list, review: @review %>
+  </div>
+  <div class='reviews-list'>
+    <% @list.reviews.each do |review| %>
+      <div class='review-card'>
+        <p class='review-card-rating'><%= review.rating %> Stars<p>
+        <p><%= review.comment %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -11,6 +11,30 @@
   </head>
 
   <body>
+    <div class="header">
+      <%= link_to lists_path do %>
+        <i class="fa-solid fa-ticket"></i>
+      <% end %>
+      <div class="header-buttons">
+        <p class="header-link"><%= link_to "My lists", lists_path(anchor: "lists-anchor")%></p>
+        <p class="header-link"><%= link_to "New list", list_path(:new)%></p>
+      </div>
+    </div>
+    <div>
     <%= yield %>
+    </div>
+    <div class='footer'>
+      <div class='footer-icons'>
+        <%= link_to "https://gmail.com", :target => "_blank" do %>
+          <i class="fa-solid fa-envelope"></i>
+        <% end %>
+        <%= link_to "https://github.com/brunswickck", :target => "_blank" do %>
+          <i class="fa-brands fa-github"></i>
+        <% end %>
+        <%= link_to "https://headlines.peta.org/donate/", :target => "_blank" do %>
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        <% end %>
+      </div>
+    </div>
   </body>
 </html>

@@ -4,9 +4,239 @@
 @import "config/bootstrap_variables";
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
+// @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  * {
+    margin: 0 10px;
+  }
+
+  i {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.header-link {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.index-header {
+  background-image: url(https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+
+  h1 {
+    padding: 20vh 0;
+  }
+}
+
+
+.index-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  height: 15vh;
+  margin: 0 auto;
+  p {
+    background-color: greenyellow;
+  }
+}
+
+
+
+.list-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 70%;
+  row-gap: 50px;
+  column-gap: 50px;
+}
+
+.list-card {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  height: 20vh;
+}
+
+.list-card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6%;
+}
+
+.footer {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+
+  i {
+    padding: 10px;
+    margin: 5px 0;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+
+// above is css applications html and index html
+
+// below is css for new html
+
+.list-form-box {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+}
+
+// css for show html
+
+
+.show-banner {
+  background-image: url(https://images.pexels.com/photos/7991225/pexels-photo-7991225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  height: 30vh;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: white;
+  }
+}
+
+// .movies-card-box {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+.movies-card-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+  column-gap: 50px;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.movie-card {
+  display: flex;
+
+  * {
+    padding: 3px;
+  }
+  img {
+    max-width: 275px;
+    height: auto;
+  }
+
+  .movie-card-title {
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .movie-card-rating {
+    font-size: large;
+    font-weight: 900;
+  }
+}
+
+.movie-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 15px
+}
+
+
+.new-bookmark {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10vh;
+
+  * {
+    padding: 3px;
+    margin: 0 20px;
+  }
+
+  p {
+    font-size: 45px;
+    font-weight: bold;
+  }
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 10vh;
+}
+
+.new-review * {
+  padding: 3px;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card-rating {
+  font-size: larger;
+  font-weight: 800;
+}
