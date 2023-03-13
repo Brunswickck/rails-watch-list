@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <div class="header">
+    <div class="header navbar fixed-top" data-controller='navbar' data-action='scroll@window->navbar#updateNavbar'>
       <%= link_to lists_path do %>
         <%= cl_image_tag("movie-logo", width: 80, crop: :scale) %>
       <% end %>

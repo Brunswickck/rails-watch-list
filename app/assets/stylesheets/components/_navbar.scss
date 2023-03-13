@@ -1,12 +1,39 @@
-.navbar-lewagon {
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: white;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.header {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+
+  * {
+    margin: 0 10px;
+  }
+
+  i {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar {
+  background-color: rgb(0, 255, 51);
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-scroll {
+  background-color: rgb(233, 0, 0) !important;
 }
